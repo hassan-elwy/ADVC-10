@@ -65,7 +65,22 @@
 
         }
         #endregion
+        #region Q4
+        //it's is method that contain generic Type 
 
+        public void Swap<T>(ref T x,ref T y)
+        {
+            T temp=x;
+            x=y;
+            y=temp;
+
+
+        }
+        #endregion
+
+        #region Q5
+
+        #endregion
         static void Main(string[] args)
         {
 
