@@ -1,4 +1,6 @@
-﻿namespace Assignment10
+﻿using System.Numerics;
+
+namespace Assignment10
 {
     internal class Program
     {
@@ -79,7 +81,21 @@
         #endregion
 
         #region Q5
+        public T? FindMax<T>(T[]values) where T:IComparable<T>
+        {
+            if(values.Length==0)
+            { return default; }
 
+            T max = values[0];
+
+            for(int i=0;i<values.Length;i++)
+            {
+                if (max.CompareTo(values[i])<0)
+                { max = values[i]; }
+            }
+
+            return max;
+        }
         #endregion
         static void Main(string[] args)
         {
