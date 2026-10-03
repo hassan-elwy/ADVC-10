@@ -26,6 +26,46 @@
         }
         #endregion
 
+        #region Q3
+        //it's geenric that accept multiple types
+
+        public class Pair<Tkey,Tvalue>
+        {
+            public Tkey Key;
+            public Tvalue Value;
+
+            public Pair() { }
+
+            public Pair(Tkey key, Tvalue value)
+            {
+                Key = key;
+                Value = value;
+            }
+
+            public void setPair(Tkey key, Tvalue value)
+            {
+                Key = key; Value = value;
+            }
+
+            public Tvalue? GetValue (Tkey key)
+            {
+                if (key == null || key.ToString() == null) return default; 
+
+                if(key.ToString()==Key.ToString())
+                {
+                    return Value;
+                }
+                else
+                {
+
+                    return default;
+                }
+
+            }
+
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
