@@ -97,6 +97,16 @@ namespace Assignment10
             return max;
         }
         #endregion
+
+        #region Q6
+        //it's interface that use generic types
+        public interface IRepository<T>
+        {
+            void AddMember(T item);
+           
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
