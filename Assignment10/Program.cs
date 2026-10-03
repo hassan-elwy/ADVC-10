@@ -218,8 +218,100 @@ namespace Assignment10
 
         }
         #endregion
+        #region Q15
+        //make generic not able to be written, but can be returned
 
-      
+        public interface convertIntToType<out T> where T : INumber<T>
+        {
+            T IntConvertToType(int value);
+
+        }
+        #endregion
+
+        #region Q16
+        //make generic not able to be Returned, but can be Written
+
+        public interface ContertTypetoInt<in T> where T : INumber<T>
+        {
+            int TypeConvertToInt(T value);
+        }
+
+        #endregion
+
+        #region Q17
+
+        //covariance:make generic type not able to be written, but can be returned
+
+        //contravariance:make generic Type not able to be Returned, but can be Written
+
+        #endregion
+
+        #region Q18
+
+        //static members are shared accross classes with the same type,but it's different with class that has different types
+
+        #endregion
+        #region q19
+        //childs of generic class need to either stay generic or send the type argument in inheriting
+
+        public class SafeListhelper<T> : SafeList<T>
+        {
+            SafeListhelper(int size) : base(size) { }
+
+            public int getSize() { return size; }
+        }
+
+        public class SafeListhelper : SafeList<int>
+        {
+            SafeListhelper(int size) : base(size) { }
+
+            public int getSize() { return size; }
+        }
+
+        #endregion
+
+        #region Q20
+
+        public class Cache<tKey, tValue>
+        {
+            tKey key;
+            tValue value;
+
+            public void add(tKey k, tValue v)
+            {
+                this.key = k;
+                this.value = v;
+
+            }
+
+            public tValue? get(tKey k)
+            {
+                if (key == null) return default;
+
+                if (key.ToString() == k.ToString()) { return value; }
+
+                return default;
+            }
+
+            public void remove()
+            {
+                key = default;
+                value = default;
+            }
+
+            public void Contains()
+            {
+                Console.WriteLine("Cache contains:");
+                Console.WriteLine("Key:" + key);
+                Console.WriteLine("value =" + value);
+            }
+
+
+
+
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
